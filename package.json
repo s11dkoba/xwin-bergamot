@@ -1,0 +1,10 @@
+{
+  "name": "xwin-bergamot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "XWIN corporate site — English edition (static site).",
+  "scripts": {
+    "dev": "npx --yes serve . -l 3200",
+    "deploy": "npx netlify-cli deploy --prod --dir=."
+  }
+}
