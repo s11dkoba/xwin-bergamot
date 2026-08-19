@@ -396,3 +396,12 @@ nav{display:none;}
 .area-svc-list li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--violet-mid);}
 /* --- flagship cards get a violet edge so they read as the lead offer --- */
 .product-card.featured{border:1.5px solid var(--violet-mid);box-shadow:0 6px 24px rgba(90,44,187,.10);}
+
+/* --- outbound channel cards (X / CryptoQuant) --- */
+.channel-row{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.channel-card{display:flex;flex-direction:column;border:1px solid var(--gray-border);border-radius:var(--radius-card);padding:30px 28px;color:var(--black);transition:border-color .2s;}
+.channel-card:hover{border-color:var(--violet-mid);}
+.channel-eyebrow{font-size:12.5px;font-weight:700;color:var(--violet-mid);letter-spacing:.08em;margin-bottom:10px;}
+.channel-card h3{font-size:19px;margin-bottom:12px;}
+.channel-card p{font-size:13.5px;color:var(--text-secondary);line-height:1.85;margin-bottom:22px;}
+.channel-link{margin-top:auto;font-size:13.5px;font-weight:600;color:var(--black);}
