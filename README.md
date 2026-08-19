@@ -2,9 +2,9 @@
 
 エックスウィン株式会社サイトの英語版（作業用リポジトリ）。
 
-- 現状: `xwin-strawberry` の日本語版を完全複製した状態
+- 現状: `xwin-strawberry` の日本語版を複製し、サービス3ページをトップページへ集約した状態
 - 構成: 素の静的サイト（HTML + `style.css` + 画像）。ビルド不要
-- ページ: `index` / `about` / `news` / `contact` / `service-management` / `service-data` / `service-digital-asset`
+- ページ: `index` / `about` / `news` / `contact`（サービス3ページはトップに集約済み）
 
 ## ローカル確認
 

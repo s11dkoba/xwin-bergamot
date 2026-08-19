@@ -398,3 +398,13 @@ nav{display:none;}
 .solution-row{grid-template-columns:1fr;}
 .final-cta{padding:34px 26px;}
 }
+
+/* --- merged service lists inside the design-approach cards --- */
+.area-card .area-tagline{margin-top:auto;}
+.area-svc-list{margin-top:0;}
+.area-svc-head{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--violet-mid);margin-bottom:10px;}
+.area-svc-list ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.area-svc-list li{position:relative;padding-left:16px;font-size:13.5px;font-weight:500;color:var(--black);line-height:1.6;}
+.area-svc-list li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--violet-mid);}
+/* --- flagship cards get a violet edge so they read as the lead offer --- */
+.product-card.featured{border:1.5px solid var(--violet-mid);box-shadow:0 6px 24px rgba(90,44,187,.10);}
