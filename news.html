@@ -66,7 +66,42 @@
       <span class="channel-link">Quicktakeを見る →</span>
     </a>
   </div>
+  <div class="cq-update jp">
+    <button type="button" id="cq-update-btn" class="pill-btn outline jp">最新のQuicktakeを開く →</button>
+    <p class="cq-update-note" id="cq-update-note">更新の確認は1日1回まで。</p>
+  </div>
 </section>
+
+<script>
+(function(){
+  var btn = document.getElementById('cq-update-btn');
+  var note = document.getElementById('cq-update-note');
+  if(!btn) return;
+  var URL = 'https://cryptoquant.com/profile/u/xwin?tab=quicktake';
+  var KEY = 'xwin-cq-last-check';
+  function today(){
+    var d = new Date();
+    return d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
+  }
+  function stored(){
+    try { return window.localStorage.getItem(KEY); } catch(e){ return null; }
+  }
+  function lock(){
+    btn.disabled = true;
+    btn.classList.add('is-spent');
+    btn.textContent = '本日は確認済み';
+    note.textContent = '次回の確認は明日以降にご利用いただけます。';
+  }
+  if(stored() === today()) lock();
+  btn.addEventListener('click', function(){
+    if(btn.disabled) return;
+    try { window.localStorage.setItem(KEY, today()); } catch(e){}
+    window.open(URL, '_blank', 'noopener');
+    lock();
+  });
+})();
+</script>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
