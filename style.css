@@ -86,10 +86,6 @@ nav a.nav-2line{flex-direction:column;justify-content:center;align-items:center;
 .area-card h3{font-size:18px;margin-bottom:8px;}
 .area-sub{font-size:13.5px;font-weight:700;color:var(--violet-mid);margin-bottom:14px;line-height:1.6;}
 .area-desc{font-size:13.5px;color:var(--text-secondary);margin-bottom:18px;line-height:1.85;}
-.area-services{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
-.area-service-tag{font-size:13.5px;background:var(--gray-bg);padding:6px 13px;border-radius:var(--radius-pill);color:var(--black);}
-.area-tagline{margin-top:16px;padding-top:14px;border-top:1px solid rgb(228,226,220);font-size:13.5px;font-weight:700;color:#5a2cbb;margin-bottom:16px;}
-#areas .area-services{min-height:118px;align-content:flex-start;}
 .area-card .arrow{margin-top:auto;font-size:13.5px;font-weight:600;color:var(--black);}
 .page-hero{padding:56px 32px 44px;border-bottom:1px solid var(--gray-border);}
 .page-hero .eyebrow{font-size:18px;font-weight:500;color:var(--violet-mid);margin-bottom:10px;}
@@ -396,8 +392,7 @@ nav{display:none;}
 }
 
 /* --- merged service lists inside the design-approach cards --- */
-.area-card .area-tagline{margin-top:auto;}
-.area-svc-list{margin-top:0;}
+.area-svc-list{margin-top:auto;padding-top:16px;border-top:1px solid rgb(228,226,220);}
 .area-svc-head{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--violet-mid);margin-bottom:10px;}
 .area-svc-list ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
 .area-svc-list li{position:relative;padding-left:16px;font-size:13.5px;font-weight:500;color:var(--black);line-height:1.6;}
