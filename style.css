@@ -76,8 +76,7 @@ nav a.nav-2line{flex-direction:column;justify-content:center;align-items:center;
 .hero-heading{font-size:44px;line-height:1.25;font-weight:700;letter-spacing:normal;}
 .hero-heading .accent{color:var(--violet-mid);font-size:52px;}
 .hero-sub-left{color:#373737;font-size:26px;font-weight:600;line-height:36.4px;margin-top:22px;max-width:720px;}
-.hero-combo-left{margin-top:22px;font-size:18px;font-weight:600;color:#3d3d3d;}
-.hero-combo-left .x{color:var(--violet-mid);font-weight:700;margin:0 10px;}
+.hero-lead-left{margin-top:22px;font-size:18px;font-weight:500;color:#3d3d3d;line-height:1.85;max-width:640px;}
 .hero-ctas-left{display:flex;gap:14px;margin-top:34px;}
 .about-lead{max-width:720px;color:var(--text-secondary);font-size:14.5px;line-height:1.95;}
 .area-row{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
