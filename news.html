@@ -52,6 +52,22 @@
   </div>
 </section>
 
+<section class="section" style="padding-top:0;" id="xwin-index">
+  <div class="section-head jp" style="flex-direction:column;align-items:flex-start;">
+    <div class="jp eyebrow-label">XWIN CAPITAL INDEX</div>
+    <h2>XWIN Capital Index</h2>
+    <p>暗号資産市場の方向性を0〜100で可視化する、XWIN独自のマーケットインデックスです。</p>
+  </div>
+  <div class="xci-card">
+    <div class="xci-viewport" id="xci-viewport">
+      <iframe src="https://xwin-crimson-overdrive.vercel.app/xwin-index" title="XWIN Capital Index" scrolling="no" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <div class="jp" style="max-width:var(--maxw);margin:20px auto 0;">
+    <a href="https://xwin-crimson-overdrive.vercel.app/xwin-index" target="_blank" rel="noopener noreferrer" class="pill-btn outline jp">XWIN Capital Indexを見る →</a>
+  </div>
+</section>
+
 <section class="section" style="padding-top:0;" id="cryptoquant">
   <div class="section-head jp" style="flex-direction:column;align-items:flex-start;">
     <div class="jp eyebrow-label">ON-CHAIN RESEARCH</div>
@@ -71,6 +87,19 @@
     <p class="cq-update-note" id="cq-update-note">更新の確認は1日1回まで。</p>
   </div>
 </section>
+
+<script>
+(function(){
+  var vp = document.getElementById('xci-viewport');
+  if(!vp) return;
+  function fit(){
+    var logical = window.matchMedia('(max-width: 760px)').matches ? 760 : 1440;
+    vp.style.setProperty('--xci-scale', vp.clientWidth / logical);
+  }
+  fit();
+  window.addEventListener('resize', fit);
+})();
+</script>
 
 <script>
 (function(){
