@@ -463,3 +463,13 @@ nav > a.nav-page{padding-top:3px;}
 @media (max-width:900px){
   .audience ul{grid-template-columns:1fr;}
 }
+
+/* --- the both-sides statement, set as a pull quote --- */
+.who-block{max-width:var(--maxw);margin:0 auto;padding:6px 0 6px 30px;border-left:3px solid var(--violet-mid);}
+.who-heading{font-size:28px;line-height:1.35;font-weight:700;margin-bottom:20px;}
+.who-body{font-size:15px;line-height:1.95;color:var(--text-secondary);max-width:720px;}
+.who-body + .who-body{margin-top:15px;}
+@media (max-width:900px){
+  .who-block{padding-left:20px;}
+  .who-heading{font-size:23px;}
+}
