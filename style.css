@@ -438,3 +438,6 @@ nav{display:none;}
 @media (max-width:900px){
   .domestic-strip{grid-template-columns:1fr;gap:14px;}
 }
+
+/* --- evidence link inside a JAPAN card --- */
+.trust-source{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--violet-mid);}
