@@ -473,3 +473,9 @@ nav > a.nav-page{padding-top:3px;}
   .who-block{padding-left:20px;}
   .who-heading{font-size:23px;}
 }
+
+/* --- Japanese rendering shown alongside, removed at translation time --- */
+.who-ja{margin-top:26px;padding-top:22px;border-top:1px solid var(--gray-border);max-width:720px;}
+.who-ja h3{font-size:16px;font-weight:700;margin-bottom:12px;}
+.who-ja p{font-size:13.5px;line-height:1.95;color:var(--text-secondary);}
+.who-ja p + p{margin-top:11px;}
