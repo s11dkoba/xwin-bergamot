@@ -22,7 +22,6 @@
 <a href="#xwin-capital" class="nav-2line">エックスウィン<br>キャピタル</a>
 <a href="#areas" class="nav-2line">設計アプローチ</a>
 <a href="about.html" class="">会社概要</a>
-<a href="news.html" class="">ニュース</a>
 </nav>
     <a href="contact.html" class="pill-btn jp"><svg class="icon" style="width:16px;height:16px;stroke:#fff" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>お問い合わせ</a>
   </div>
@@ -215,7 +214,17 @@
   <div class="section-head" style="flex-direction:column;align-items:flex-start;">
     <div class="jp eyebrow-label">INSIGHTS</div>
     <h2 class="jp">知見・インサイト</h2>
-    <p class="jp">市場分析とオンチェーンリサーチを、XとCryptoQuantで継続的に公開しています。</p>
+    <p class="jp">市場センチメント指数を毎日更新し、市場分析とオンチェーンリサーチを継続的に公開しています。</p>
+  </div>
+  <div class="token-eyebrow jp" style="max-width:var(--maxw);margin:0 auto 6px;">XWIN CAPITAL INDEX</div>
+  <p class="fields-note jp" style="margin:0 auto 18px;">暗号資産市場の方向性を0〜100で可視化する、XWIN独自のマーケットインデックスです。下の表示は毎日更新されます。</p>
+  <div class="xci-card">
+    <div class="xci-viewport" id="xci-viewport">
+      <iframe src="https://xwin-crimson-overdrive.vercel.app/xwin-index" title="XWIN Capital Index" scrolling="no" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <div class="jp" style="max-width:var(--maxw);margin:18px auto 40px;">
+    <a href="https://xwin-crimson-overdrive.vercel.app/xwin-index" target="_blank" rel="noopener noreferrer" class="pill-btn outline jp">XWIN Capital Indexを見る →</a>
   </div>
   <div class="channel-row jp">
     <a class="channel-card" href="https://x.com/xwinfinance" target="_blank" rel="noopener noreferrer">
@@ -230,6 +239,10 @@
       <p>オンチェーンデータに基づく市場分析を、CryptoQuantのQuicktakeで公開しています。</p>
       <span class="channel-link">Quicktakeを見る →</span>
     </a>
+  </div>
+  <div class="cq-update jp">
+    <button type="button" id="cq-update-btn" class="pill-btn outline jp">最新のQuicktakeを開く →</button>
+    <p class="cq-update-note" id="cq-update-note">更新の確認は1日1回まで。</p>
   </div>
   <p class="fields-note jp">あわせて、日本を代表する経済紙・日経新聞、および暗号資産・Web3を専門とする日本のオンラインビジネスメディア Nada News への寄稿、講演会・セミナーへの登壇を通じても発信しています。</p>
 </section>
@@ -255,6 +268,49 @@
   <p class="cta-note jp">English inquiries welcome.</p>
 </section>
 
+<script>
+(function(){
+  var vp = document.getElementById('xci-viewport');
+  if(!vp) return;
+  function fit(){
+    var logical = window.matchMedia('(max-width: 760px)').matches ? 760 : 1440;
+    vp.style.setProperty('--xci-scale', vp.clientWidth / logical);
+  }
+  fit();
+  window.addEventListener('resize', fit);
+})();
+</script>
+
+<script>
+(function(){
+  var btn = document.getElementById('cq-update-btn');
+  var note = document.getElementById('cq-update-note');
+  if(!btn) return;
+  var URL = 'https://cryptoquant.com/profile/u/xwin?tab=quicktake';
+  var KEY = 'xwin-cq-last-check';
+  function today(){
+    var d = new Date();
+    return d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
+  }
+  function stored(){
+    try { return window.localStorage.getItem(KEY); } catch(e){ return null; }
+  }
+  function lock(){
+    btn.disabled = true;
+    btn.classList.add('is-spent');
+    btn.textContent = '本日は確認済み';
+    note.textContent = '次回の確認は明日以降にご利用いただけます。';
+  }
+  if(stored() === today()) lock();
+  btn.addEventListener('click', function(){
+    if(btn.disabled) return;
+    try { window.localStorage.setItem(KEY, today()); } catch(e){}
+    window.open(URL, '_blank', 'noopener');
+    lock();
+  });
+})();
+</script>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -274,10 +330,6 @@
     <a href="#japan">日本での実績</a>
     <a href="#xwin-capital">エックスウィンキャピタル</a>
     <a href="#areas">サービス一覧</a>
-    </div>
-    <div class="footer-col jp">
-      <h4>ニュース</h4>
-      <a href="news.html">ニュース一覧</a>
     </div>
   </div>
   <div class="footer-bottom jp">
