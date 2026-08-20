@@ -429,15 +429,7 @@ nav{display:none;}
 .token-util{display:flex;flex-direction:column;gap:3px;padding-left:14px;border-left:2px solid var(--violet-mid);}
 .token-util-name{font-size:14px;font-weight:700;}
 .token-util-desc{font-size:13px;color:var(--text-secondary);line-height:1.75;}
-.domestic-strip{max-width:var(--maxw);margin:0 auto 34px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-bottom:30px;border-bottom:1px solid var(--gray-border);}
-.domestic-item{display:flex;flex-direction:column;gap:5px;}
-.domestic-num{font-size:12px;font-weight:700;color:var(--violet-mid);letter-spacing:.06em;}
-.domestic-name{font-size:15px;font-weight:700;}
-.domestic-desc{font-size:13px;color:var(--text-secondary);line-height:1.75;}
 .cta-note{margin-top:20px;font-size:13px;color:#c7c5cf;}
-@media (max-width:900px){
-  .domestic-strip{grid-template-columns:1fr;gap:14px;}
-}
 
 /* --- evidence link inside a JAPAN card --- */
 .trust-source{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--violet-mid);}
@@ -446,13 +438,5 @@ nav{display:none;}
 .stats-grid.on-light .stat-card{border:1px solid var(--gray-border);}
 .stats-note{max-width:780px;margin:16px auto 0;font-size:13px;color:var(--text-secondary);line-height:1.9;}
 .fields-head{max-width:var(--maxw);margin:42px auto 14px;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--violet-mid);}
-.fields-grid{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;}
-.field-item{display:flex;gap:16px;padding:11px 0;border-bottom:1px solid var(--gray-border);font-size:13.5px;}
-.field-sector{flex:0 0 132px;font-weight:700;}
-.field-work{color:var(--text-secondary);line-height:1.6;}
 .fields-note{max-width:var(--maxw);margin:22px auto 0;font-size:13.5px;color:var(--text-secondary);line-height:1.9;}
 .token-eyebrow{font-size:12.5px;font-weight:700;color:var(--violet-mid);letter-spacing:.08em;margin-bottom:10px;}
-@media (max-width:900px){
-  .fields-grid{grid-template-columns:1fr;gap:0;}
-  .field-sector{flex:0 0 112px;}
-}
