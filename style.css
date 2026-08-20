@@ -28,11 +28,11 @@ a{color:inherit;text-decoration:none;}
 .icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;flex-shrink:0;}
 
 
-header{border-bottom:1px solid var(--gray-border);position:sticky;top:0;background:#fff;z-index:50;padding:14px 32px;}
-.header-inner{display:flex;align-items:center;max-width:var(--maxw);margin:0 auto;gap:24px;}
+header{border-bottom:1px solid var(--gray-border);position:sticky;top:0;background:#fff;z-index:50;padding:18px 32px;}
+.header-inner{display:flex;align-items:flex-start;max-width:var(--maxw);margin:0 auto;gap:24px;}
 .logo-mark{width:40px;height:40px;border-radius:50%;background:var(--black);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12.5px;letter-spacing:-0.02em;flex-shrink:0;}
 .header-inner .logo-mark{width:38px;height:38px;font-size:12px;}
-nav{display:flex;align-items:center;gap:16px;font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:400;margin-left:auto;}
+nav{display:flex;align-items:flex-start;gap:22px;font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:400;margin-left:auto;}
 nav a{opacity:1;display:flex;align-items:center;gap:4px;padding:0 8px;color:var(--black);}
 nav a:hover{color:var(--violet-mid);}
 nav a.active{color:var(--violet-mid);}
@@ -441,8 +441,14 @@ nav{display:none;}
 .token-eyebrow{font-size:12.5px;font-weight:700;color:var(--violet-mid);letter-spacing:.08em;margin-bottom:10px;}
 
 /* --- header: section jumps read as subordinate to page links --- */
+nav a.nav-page{font-weight:500;}
+
+/* --- header: TOP is the parent row, its sections sit beneath --- */
+.nav-col{display:flex;flex-direction:column;gap:14px;}
+.nav-top{font-size:15px;font-weight:600;letter-spacing:.04em;}
 .nav-sections{display:flex;align-items:center;gap:2px;}
 .nav-sections a{font-size:13px;color:var(--text-secondary);padding:0 7px;}
 .nav-sections a:hover{color:var(--violet-mid);}
-.nav-rule{width:1px;height:18px;background:var(--gray-border);margin:0 4px;flex-shrink:0;}
-nav a.nav-page{font-weight:500;}
+nav > a.nav-page{padding-top:3px;}
+.header-inner > .logo-block,
+.header-inner > .pill-btn{margin-top:2px;}
