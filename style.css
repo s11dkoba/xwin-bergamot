@@ -477,3 +477,8 @@ nav > a.nav-page{padding-top:3px;}
 @media (max-width:900px){
   .team-grid{grid-template-columns:1fr !important;}
 }
+
+/* --- team portraits --- */
+.team-photo{width:76px;height:76px;border-radius:50%;overflow:hidden;margin-bottom:14px;background:var(--gray-bg);}
+.team-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.team-card .bio a{color:var(--violet-mid);font-weight:600;}
