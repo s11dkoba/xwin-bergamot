@@ -1,9 +1,0 @@
-# Static site: no build step, publish the repository root as-is.
-[build]
-  publish = "."
-  command = ""
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
