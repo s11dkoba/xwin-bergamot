@@ -24,7 +24,7 @@ body{font-family:'Space Grotesk','Noto Sans JP',sans-serif;color:var(--black);ba
 h1,h2,h3{font-weight:700;letter-spacing:-0.01em;font-family:'Noto Sans JP',sans-serif;}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
 a{color:inherit;text-decoration:none;}
-.jp{font-family:'Noto Sans JP',sans-serif;}
+.jp{font-family:'Space Grotesk','Noto Sans JP',sans-serif;}
 .icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;flex-shrink:0;}
 
 
