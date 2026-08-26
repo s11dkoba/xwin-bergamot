@@ -241,11 +241,17 @@
     <p class="jp">We price a market sentiment index daily, and publish market analysis and on-chain research continuously.</p>
   </div>
   <div class="token-eyebrow jp" style="max-width:var(--maxw);margin:0 auto 6px;">XWIN CAPITAL INDEX</div>
-  <p class="fields-note jp" style="margin:0 auto 18px;">XWIN’s own market index, showing the direction of the crypto market on a scale of 0 to 100. The panel below updates every day.</p>
+  <p class="fields-note jp" style="margin:0 auto 18px;">XWIN’s own market index, showing the direction of the crypto market on a scale of 0 to 100, recalculated daily.</p>
   <div class="xci-card">
-    <div class="xci-viewport" id="xci-viewport">
-      <iframe src="https://xwin-crimson-overdrive.vercel.app/xwin-index" title="XWIN Capital Index" scrolling="no" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="band-head">How to read the score</div>
+    <div class="band-list">
+      <div class="band"><span class="band-range">80 – 100</span><span class="band-label is-up">Strong upside</span></div>
+      <div class="band"><span class="band-range">60 – 79</span><span class="band-label is-up">Upside bias</span></div>
+      <div class="band"><span class="band-range">40 – 59</span><span class="band-label">Neutral, no clear direction</span></div>
+      <div class="band"><span class="band-range">20 – 39</span><span class="band-label is-down">Downside bias</span></div>
+      <div class="band"><span class="band-range">0 – 19</span><span class="band-label is-down">Strong downside</span></div>
     </div>
+    <p class="band-note">The score is recalculated every day. Open the index for the current reading.</p>
   </div>
   <div class="jp" style="max-width:var(--maxw);margin:18px auto 40px;">
     <a href="https://xwin-crimson-overdrive.vercel.app/xwin-index" target="_blank" rel="noopener noreferrer" class="pill-btn outline jp">Open the XWIN Capital Index →</a>
@@ -281,19 +287,6 @@
   </div>
   <p class="cta-note jp">English inquiries welcome.</p>
 </section>
-
-<script>
-(function(){
-  var vp = document.getElementById('xci-viewport');
-  if(!vp) return;
-  function fit(){
-    var logical = window.matchMedia('(max-width: 760px)').matches ? 760 : 1440;
-    vp.style.setProperty('--xci-scale', vp.clientWidth / logical);
-  }
-  fit();
-  window.addEventListener('resize', fit);
-})();
-</script>
 
 <script>
 (function(){

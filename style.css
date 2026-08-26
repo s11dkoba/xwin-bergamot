@@ -552,3 +552,14 @@ nav > a.nav-page{padding-top:3px;}
   .hero-copy .hero-lead-left{font-size:14.5px;line-height:1.85;}
   .hero-ctas-left .pill-btn{justify-content:center;}
 }
+
+/* --- index score bands, stated rather than framed --- */
+.band-head{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--violet-mid);margin-bottom:14px;}
+.band-list{display:flex;flex-direction:column;}
+.band{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--gray-border);font-size:14px;}
+.band:last-child{border-bottom:1px solid var(--gray-border);}
+.band-range{font-weight:700;}
+.band-label{color:var(--text-secondary);}
+.band-label.is-up{color:var(--green-mid);font-weight:600;}
+.band-label.is-down{color:#c0392b;font-weight:600;}
+.band-note{margin-top:16px;font-size:12.5px;color:var(--text-secondary);line-height:1.9;}
