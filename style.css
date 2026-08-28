@@ -431,10 +431,8 @@ footer{background:var(--black);color:#fff;padding:56px 32px 26px;}
 .token-eyebrow{font-size:12.5px;font-weight:700;color:var(--violet-mid);letter-spacing:.08em;margin-bottom:10px;}
 
 /* --- header: section jumps read as subordinate to page links --- */
-nav a.nav-page{font-weight:500;}
 
 /* --- header: TOP is the parent row, its sections sit beneath --- */
-.nav-top{font-size:15px;font-weight:600;letter-spacing:.04em;}
 
 /* --- who the services are for --- */
 .audience{max-width:var(--maxw);margin:0 auto 36px;padding:24px 28px;background:var(--gray-bg);border-radius:16px;}
@@ -557,9 +555,9 @@ nav a.nav-page{font-weight:500;}
 
 /* --- header: TOP opens its sections, so the three page items stay level --- */
 .nav-menu{position:relative;}
-.nav-menu > summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:5px;padding:0 8px;color:var(--black);}
+.nav-menu > summary{list-style:none;cursor:pointer;}
 .nav-menu > summary::-webkit-details-marker{display:none;}
-.nav-menu > summary:hover{color:var(--violet-mid);}
+.nav-menu > summary:hover{border-color:var(--violet-mid);color:var(--violet-mid);}
 .nav-caret{width:13px;height:13px;stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .18s;}
 .nav-menu[open] .nav-caret{transform:rotate(180deg);}
 .nav-menu-list{position:absolute;top:calc(100% + 12px);left:0;z-index:60;min-width:210px;background:#fff;border:1px solid var(--gray-border);border-radius:14px;box-shadow:0 10px 30px rgba(10,10,10,.10);padding:8px;display:flex;flex-direction:column;}
@@ -567,4 +565,19 @@ nav a.nav-page{font-weight:500;}
 .nav-menu-list a:hover{background:var(--gray-bg);color:var(--violet-mid);}
 @media (max-width:430px){
   .nav-menu-list{min-width:0;right:0;left:auto;}
+}
+
+/* --- the three header items share one pill --- */
+nav{gap:10px;}
+nav a.pill-btn,nav summary.pill-btn{padding:11px 20px;font-size:13.5px;}
+nav a.pill-btn.active{border-color:var(--violet-mid);color:var(--violet-mid);}
+nav a.pill-btn:hover{border-color:var(--violet-mid);color:var(--violet-mid);}
+.nav-menu[open] > summary{border-color:var(--violet-mid);color:var(--violet-mid);}
+@media (max-width:760px){
+  nav{gap:8px;}
+  nav a.pill-btn,nav summary.pill-btn{padding:9px 15px;font-size:12.5px;}
+}
+@media (max-width:430px){
+  nav{gap:6px;}
+  nav a.pill-btn,nav summary.pill-btn{padding:8px 11px;font-size:12px;}
 }
