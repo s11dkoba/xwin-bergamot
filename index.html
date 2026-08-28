@@ -52,7 +52,7 @@
 
 <section class="section" id="japan">
   <div class="section-head" style="flex-direction:column;align-items:flex-start;">
-    <div class="jp eyebrow-label">JAPAN</div>
+    <div class="jp eyebrow-label has-flag"><span class="flag-jp" aria-hidden="true"><svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="6" fill="#BC002D"/><rect x="0.5" y="0.5" width="29" height="19" fill="none" stroke="rgba(0,0,0,.16)"/></svg></span>JAPAN</div>
     <h2 class="jp">At the front of Japan’s shift to digital assets</h2>
     <p class="jp">We work from inside Japan’s financial system, its regulation and its corporate culture — from the debate over the rules to putting them to work over a shop counter.</p>
   </div>
@@ -270,18 +270,40 @@
   <div class="token-eyebrow jp" style="max-width:var(--maxw);margin:0 auto 6px;">XWIN CAPITAL INDEX</div>
   <p class="fields-note jp" style="margin:0 auto 18px;">Our own index of where the crypto market is heading, on a scale of 0 to 100, repriced every day.</p>
   <div class="xci-card">
-    <div class="band-head">How to read the score</div>
-    <div class="band-list">
-      <div class="band"><span class="band-range">80 – 100</span><span class="band-label is-up">Strong upside</span></div>
-      <div class="band"><span class="band-range">60 – 79</span><span class="band-label is-up">Upside bias</span></div>
-      <div class="band"><span class="band-range">40 – 59</span><span class="band-label">Neutral, no clear direction</span></div>
-      <div class="band"><span class="band-range">20 – 39</span><span class="band-label is-down">Downside bias</span></div>
-      <div class="band"><span class="band-range">0 – 19</span><span class="band-label is-down">Strong downside</span></div>
+    <div class="xci-grid">
+      <figure class="xci-gauge">
+        <svg id="xci-svg" viewBox="0 0 320 190" role="img" aria-label="XWIN Capital Index gauge, score loading">
+          <path d="M40.00,160.00 A120,120 0 0 1 62.92,89.47 L83.95,104.75 A94,94 0 0 0 66.00,160.00 Z" fill="#E5484D"/>
+          <path d="M62.92,89.47 A120,120 0 0 1 122.92,45.87 L130.95,70.60 A94,94 0 0 0 83.95,104.75 Z" fill="#E8792B"/>
+          <path d="M122.92,45.87 A120,120 0 0 1 197.08,45.87 L189.05,70.60 A94,94 0 0 0 130.95,70.60 Z" fill="#F0A500"/>
+          <path d="M197.08,45.87 A120,120 0 0 1 257.08,89.47 L236.05,104.75 A94,94 0 0 0 189.05,70.60 Z" fill="#5CB85C"/>
+          <path d="M257.08,89.47 A120,120 0 0 1 280.00,160.00 L254.00,160.00 A94,94 0 0 0 236.05,104.75 Z" fill="#2FA84F"/>
+          <text x="53" y="178" text-anchor="middle" class="xci-end">0</text>
+          <text x="267" y="178" text-anchor="middle" class="xci-end">100</text>
+          <line id="xci-needle" x1="160" y1="160" x2="160" y2="160" stroke="#1F2937" stroke-width="4" stroke-linecap="round" style="visibility:hidden"/>
+          <circle cx="160" cy="160" r="8" fill="#1F2937"/>
+          <text id="xci-score" x="160" y="126" text-anchor="middle" class="xci-num"></text>
+        </svg>
+        <figcaption>
+          <div class="xci-label" id="xci-label">Loading the current score…</div>
+          <div class="xci-meta" id="xci-meta"></div>
+        </figcaption>
+      </figure>
+      <div class="xci-bands">
+        <div class="band-head">How to read the score</div>
+        <div class="band-list">
+          <div class="band"><span class="band-range">80 – 100</span><span class="band-label is-up">Strong upside</span></div>
+          <div class="band"><span class="band-range">60 – 79</span><span class="band-label is-up">Upside bias</span></div>
+          <div class="band"><span class="band-range">40 – 59</span><span class="band-label">Neutral, no clear direction</span></div>
+          <div class="band"><span class="band-range">20 – 39</span><span class="band-label is-down">Downside bias</span></div>
+          <div class="band"><span class="band-range">0 – 19</span><span class="band-label is-down">Strong downside</span></div>
+        </div>
+        <p class="band-note">Repriced every day. The reading above is pulled from the index itself, not stored here.</p>
+      </div>
     </div>
-    <p class="band-note">The score is recalculated every day. Open the index for the current reading.</p>
   </div>
   <div class="jp" style="max-width:var(--maxw);margin:18px auto 40px;">
-    <a href="https://xwin-crimson-overdrive.vercel.app/xwin-index" target="_blank" rel="noopener noreferrer" class="pill-btn outline jp">Open the XWIN Capital Index →</a>
+    <a href="https://xwin-crimson-overdrive.vercel.app/xwin-index" target="_blank" rel="noopener noreferrer" hreflang="ja" class="pill-btn outline jp">Full index and 30-day history <span class="lang-note">(in Japanese)</span> →</a>
   </div>
   <div class="channel-row jp">
     <a class="channel-card" href="https://x.com/xwinfinance" target="_blank" rel="noopener noreferrer">
@@ -315,6 +337,39 @@
 </section>
 
 <script>
+(function(){
+  /* the index sends no CORS headers, so /api/xwin-index reads it for us */
+  var svg = document.getElementById('xci-svg');
+  if (!svg) return;
+  var needle = document.getElementById('xci-needle'),
+      score  = document.getElementById('xci-score'),
+      label  = document.getElementById('xci-label'),
+      meta   = document.getElementById('xci-meta');
+  var TONE = { up: '#12855A', flat: '#6B7280', down: '#D93843' };
+  function unavailable(){
+    label.textContent = 'Current score unavailable just now';
+    label.style.color = '';
+    meta.textContent = 'Open the full index for the reading.';
+  }
+  fetch('/api/xwin-index')
+    .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(d){
+      if (typeof d.score !== 'number') throw new Error('no score');
+      var rad = (180 - 1.8 * d.score) * Math.PI / 180;
+      needle.setAttribute('x2', (160 + 82 * Math.cos(rad)).toFixed(2));
+      needle.setAttribute('y2', (160 - 82 * Math.sin(rad)).toFixed(2));
+      needle.style.visibility = 'visible';
+      score.textContent = d.score;
+      label.textContent = d.label;
+      label.style.color = TONE[d.tone] || '';
+      var bits = [];
+      if (typeof d.change === 'number') bits.push((d.change > 0 ? '+' : '') + d.change + ' on the day');
+      if (d.asOf) bits.push('as of ' + d.asOf);
+      meta.textContent = bits.join(' · ');
+      svg.setAttribute('aria-label', 'XWIN Capital Index: ' + d.score + ' out of 100. ' + d.label + '.');
+    })
+    .catch(unavailable);
+})();
 (function(){
   var btn = document.getElementById('cq-update-btn');
   var note = document.getElementById('cq-update-note');
