@@ -71,10 +71,10 @@ nav a.active{color:var(--violet-mid);}
 
 .hero-left-section{padding:80px 32px 56px;}
 .hero-left-wrap{max-width:var(--maxw);margin:0 auto;text-align:left;}
-.hero-copy{max-width:760px;}
+.hero-copy{max-width:1040px;}
 .hero-heading{font-size:46px;line-height:1.22;font-weight:800;letter-spacing:-0.015em;margin-top:16px;}
 .hero-heading .accent{color:var(--violet-mid);}
-.hero-lead-left{margin-top:16px;font-size:18px;font-weight:500;color:#3d3d3d;line-height:1.85;max-width:640px;}
+.hero-lead-left{margin-top:16px;font-size:18px;font-weight:500;color:#3d3d3d;line-height:1.85;max-width:720px;}
 .hero-ctas-left{display:flex;gap:14px;margin-top:34px;}
 .about-lead{max-width:720px;color:var(--text-secondary);font-size:14.5px;line-height:1.95;}
 .area-row{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -561,7 +561,7 @@ footer{background:var(--black);color:#fff;padding:56px 32px 26px;}
 }
 
 /* --- the three header items share one pill --- */
-nav{gap:8px;margin-right:5%;}
+nav{gap:14px;margin-right:9%;}
 nav a.pill-btn,nav summary.pill-btn{min-width:112px;padding:7px 14px;font-size:13px;justify-content:center;}
 nav a.pill-btn.active{border-color:var(--violet-mid);color:var(--violet-mid);}
 nav a.pill-btn:hover{border-color:var(--violet-mid);color:var(--violet-mid);}
@@ -571,13 +571,11 @@ nav a.pill-btn:hover{border-color:var(--violet-mid);color:var(--violet-mid);}
   nav a.pill-btn,nav summary.pill-btn{min-width:96px;padding:6px 12px;font-size:12.5px;}
 }
 @media (max-width:430px){
-  nav{gap:6px;}
-  nav a.pill-btn,nav summary.pill-btn{min-width:0;padding:6px 10px;font-size:12px;}
+  nav{gap:6px;margin-right:0;}
+  nav a.pill-btn,nav summary.pill-btn{min-width:70px;padding:6px 7px;font-size:11.5px;}
 }
 
 /* --- the three header buttons read as one set --- */
-.nav-contact{border-color:var(--black);}
-.nav-contact:hover{background:var(--violet-mid);border-color:var(--violet-mid);color:#fff;}
 .nav-caret{margin-left:2px;}
 
 /* --- hero: kicker, headline, and the three things named one per line --- */
@@ -588,3 +586,6 @@ nav a.pill-btn:hover{border-color:var(--violet-mid);color:var(--violet-mid);}
   .hero-kicker{font-size:11.5px;letter-spacing:.12em;}
   .hero-items{margin-top:18px;font-size:16.5px;line-height:1.7;}
 }
+
+/* --- one appearance for the three header buttons --- */
+nav .pill-btn:hover,nav summary.pill-btn:hover{border-color:var(--violet-mid);color:var(--violet-mid);}
