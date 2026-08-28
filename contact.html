@@ -46,7 +46,7 @@
     <div>
       <h2 class="jp">How can we help?</h2>
       <p class="jp">Management and digital transformation consulting, AI and talent training, digital asset and Web3 strategy, market research — whatever it concerns, write to us. We normally reply within two business days.</p>
-      <p class="jp" style="margin-top:24px;">Or write to us directly at <a class="mail-link" href="mailto:info@x-win.io">info@x-win.io</a>.</p>
+      <p class="jp mail-line" id="mail-line" hidden>Or write to us directly at <span id="mail-slot"></span>.</p>
       <p class="jp" style="margin-top:24px;">XWIN Corporation<br>3-2-3 Shin-Yokohama, Kohoku-ku, Yokohama, Kanagawa 222-0033, Japan<br>EPIC TOWER SHIN YOKOHAMA 9F</p>
     </div>
     <form class="jp" id="contact-form" novalidate>
@@ -63,12 +63,26 @@
 </section>
 <script>
 (function(){
+  /* assembled at run time; the address is not in the served markup */
+  var BOX = ['info', 'x-win', 'io'];
+  function address(){
+    return BOX[0] + String.fromCharCode(64) + BOX[1] + '.' + BOX[2];
+  }
+  var slot = document.getElementById('mail-slot');
+  if (slot) {
+    var a = document.createElement('a');
+    a.className = 'mail-link';
+    a.href = 'mailto:' + address();
+    a.textContent = address();
+    slot.appendChild(a);
+    document.getElementById('mail-line').hidden = false;
+  }
+
   var f = document.getElementById('contact-form');
   if (!f) return;
   var btn = document.getElementById('cf-send'),
       out = document.getElementById('cf-status'),
       el  = f.elements;
-  var MAIL = 'info@x-win.io';
   function say(msg, kind){
     out.textContent = msg;
     out.className = 'form-status' + (kind ? ' is-' + kind : '');
@@ -105,9 +119,9 @@
       if (res.d.error === 'bad_email'){ say('That email address does not look right.', 'err'); return; }
       if (res.d.error === 'missing'){ say('Please fill in your name, your email and a message.', 'err'); return; }
       /* never leave the visitor without a route */
-      say('We could not send that just now. Please email ' + MAIL + ' directly.', 'err');
+      say('We could not send that just now. Please email ' + address() + ' directly.', 'err');
     }).catch(function(){
-      say('We could not send that just now. Please email ' + MAIL + ' directly.', 'err');
+      say('We could not send that just now. Please email ' + address() + ' directly.', 'err');
     }).then(function(){ btn.disabled = false; });
   });
 })();
