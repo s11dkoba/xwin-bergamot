@@ -85,7 +85,7 @@ module.exports = async function handler(req, res) {
   ];
 
   const text = rows.map(function (r) { return r[0] + ': ' + r[1]; }).join('\n') +
-               '\n\n' + message + '\n\n— sent from the English site (xwin-bergamot)';
+               '\n\n' + message + '\n\n— sent from the English site';
 
   const html = '<table cellpadding="6" style="border-collapse:collapse;font-family:sans-serif;font-size:14px">' +
     rows.map(function (r) {
@@ -93,7 +93,7 @@ module.exports = async function handler(req, res) {
     }).join('') +
     '</table><hr style="border:0;border-top:1px solid #ddd;margin:16px 0">' +
     '<div style="font-family:sans-serif;font-size:14px;white-space:pre-wrap">' + escapeHtml(message) + '</div>' +
-    '<p style="font-family:sans-serif;font-size:12px;color:#888">Sent from the English site (xwin-bergamot).</p>';
+    '<p style="font-family:sans-serif;font-size:12px;color:#888">Sent from the English site.</p>';
 
   try {
     const r = await fetch(ENDPOINT, {

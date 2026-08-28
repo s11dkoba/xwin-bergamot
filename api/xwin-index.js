@@ -58,7 +58,7 @@ module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const r = await fetch(SOURCE, {
-      headers: { 'user-agent': 'xwin-bergamot/1.0 (+https://xwin-bergamot.vercel.app)' }
+      headers: { 'user-agent': 'XWIN-EN-site/1.0' }
     });
     if (!r.ok) throw new Error('source responded ' + r.status);
     const data = parse(await r.text());
