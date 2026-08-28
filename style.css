@@ -512,10 +512,8 @@ footer{background:var(--black);color:#fff;padding:56px 32px 26px;}
 }
 @media (max-width:430px){
   /* the contact button was pushing the header wider than the screen */
-  .header-inner > .pill-btn{padding:10px 14px;font-size:12.5px;}
-  .header-inner > .pill-btn .icon{display:none;}
   .logo-companyname{font-size:11.5px;}
-  nav{gap:10px;}
+  nav{gap:8px;}
   .nav-top,.nav-page{font-size:12.5px;padding:0 4px;}
 }
 
@@ -568,16 +566,21 @@ footer{background:var(--black);color:#fff;padding:56px 32px 26px;}
 }
 
 /* --- the three header items share one pill --- */
-nav{gap:10px;}
-nav a.pill-btn,nav summary.pill-btn{padding:11px 20px;font-size:13.5px;}
+nav{gap:8px;margin-right:5%;}
+nav a.pill-btn,nav summary.pill-btn{min-width:112px;padding:7px 14px;font-size:13px;justify-content:center;}
 nav a.pill-btn.active{border-color:var(--violet-mid);color:var(--violet-mid);}
 nav a.pill-btn:hover{border-color:var(--violet-mid);color:var(--violet-mid);}
 .nav-menu[open] > summary{border-color:var(--violet-mid);color:var(--violet-mid);}
 @media (max-width:760px){
   nav{gap:8px;}
-  nav a.pill-btn,nav summary.pill-btn{padding:9px 15px;font-size:12.5px;}
+  nav a.pill-btn,nav summary.pill-btn{min-width:96px;padding:6px 12px;font-size:12.5px;}
 }
 @media (max-width:430px){
   nav{gap:6px;}
-  nav a.pill-btn,nav summary.pill-btn{padding:8px 11px;font-size:12px;}
+  nav a.pill-btn,nav summary.pill-btn{min-width:0;padding:6px 10px;font-size:12px;}
 }
+
+/* --- the three header buttons read as one set --- */
+.nav-contact{border-color:var(--black);}
+.nav-contact:hover{background:var(--violet-mid);border-color:var(--violet-mid);color:#fff;}
+.nav-caret{margin-left:2px;}
