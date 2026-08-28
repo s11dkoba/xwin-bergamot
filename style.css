@@ -589,3 +589,6 @@ nav a.pill-btn:hover{border-color:var(--violet-mid);color:var(--violet-mid);}
 
 /* --- one appearance for the three header buttons --- */
 nav .pill-btn:hover,nav summary.pill-btn:hover{border-color:var(--violet-mid);color:var(--violet-mid);}
+
+/* --- flags a link that leads to a Japanese page --- */
+.lang-note{font-weight:500;color:var(--text-secondary);}
