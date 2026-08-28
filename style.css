@@ -645,3 +645,19 @@ nav .pill-btn:hover,nav summary.pill-btn:hover{border-color:var(--violet-mid);co
   .pill-btn{white-space:normal;text-align:center;padding:11px 18px;line-height:1.45;}
   .hero-ctas .pill-btn,.hero-ctas-left .pill-btn{white-space:nowrap;}
 }
+
+
+/* --- the way back to the Japanese site --- */
+.footer-lang{max-width:var(--maxw);margin:0 auto;padding:26px 0 0;}
+.footer-lang a{display:inline-flex;align-items:center;gap:10px;padding:11px 20px;border:1px solid rgba(255,255,255,.28);border-radius:var(--radius-pill);font-size:14px;font-weight:600;color:#fff;transition:border-color .2s,background .2s;}
+.footer-lang a:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+.footer-lang-arrow{opacity:.6;}
+
+/* --- contact form --- */
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+.form-status{margin-top:14px;font-size:14px;line-height:1.7;color:var(--text-secondary);}
+.form-status.is-ok{color:var(--green-mid);font-weight:600;}
+.form-status.is-err{color:#c02a35;font-weight:600;}
+.form-note{margin-top:10px;font-size:12.5px;color:var(--text-secondary);}
+.mail-link{font-weight:600;color:var(--violet-mid);text-decoration:underline;text-underline-offset:2px;}
+#cf-send[disabled]{opacity:.55;cursor:progress;}
