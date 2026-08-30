@@ -712,9 +712,6 @@ header nav .pill-btn:hover,nav summary.pill-btn:hover{border-color:var(--violet-
 .footer-nav{display:flex;flex-direction:column;align-items:flex-start;}
 .footer-nav a{display:block;font-size:13.5px;color:#d8d6de;margin-bottom:11px;}
 .footer-nav a:hover{color:#fff;}
-.legal-sep{opacity:.45;margin:0 4px;}
-.footer-bottom a[href="privacy.html"]{color:inherit;text-decoration:underline;text-underline-offset:2px;}
-.footer-bottom a[href="privacy.html"]:hover{color:#fff;}
 @media (max-width:700px){
   .footer-nav{margin-top:6px;}
 }
