@@ -613,10 +613,20 @@ nav .pill-btn:hover,nav summary.pill-btn:hover{border-color:var(--violet-mid);co
 .posting-cities li{font-size:14.5px;line-height:1.85;color:var(--text-secondary);}
 .posting-home .posting-cities li{color:var(--black);font-weight:500;}
 @media (max-width:700px){
+  /* the arcs are what the dots were terminals for; with the arcs gone a
+     lone circle above each heading means nothing, so the whole thing
+     reads as ordinary lines of text instead */
   .postings{margin:24px 0 22px;}
   .postings-arcs{display:none;}
-  .postings-grid{grid-template-columns:1fr;gap:20px;}
-  .posting-dot{margin-top:0;}
+  .postings-grid{grid-template-columns:1fr;gap:10px;}
+  .posting-dot{display:none;}
+  .posting-node{font-size:15px;line-height:1.9;color:var(--text-secondary);}
+  .posting-region{display:inline;margin-top:0;font-size:15px;}
+  .posting-region::after{content:" — ";font-weight:400;color:var(--text-secondary);}
+  .posting-cities{display:inline;margin-top:0;}
+  .posting-cities li{display:inline;font-size:15px;}
+  .posting-cities li:not(:last-child)::after{content:", ";}
+  .posting-home .posting-cities li{font-weight:400;color:var(--text-secondary);}
 }
 
 
