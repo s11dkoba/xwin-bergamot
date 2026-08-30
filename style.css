@@ -715,3 +715,23 @@ header nav .pill-btn:hover,nav summary.pill-btn:hover{border-color:var(--violet-
 @media (max-width:700px){
   .footer-nav{margin-top:6px;}
 }
+
+
+/* --- on a narrow screen each long section becomes a labelled panel;
+       the button and the collapse live here, the wrapping in mobile-ui.js.
+       900px is where this page stops being multi-column and starts being
+       long, which is the point at which folding it earns its keep. --- */
+.m-acc-btn{display:none;}
+@media (max-width:900px){
+  .m-acc{border-top:1px solid var(--gray-border);}
+  .m-acc-btn{display:flex;width:100%;justify-content:space-between;align-items:center;gap:12px;
+    padding:15px 18px;background:none;border:0;cursor:pointer;text-align:left;
+    font-family:'Manrope','Noto Sans JP',sans-serif;font-size:15px;font-weight:700;color:var(--black);}
+  .m-acc-btn svg{width:18px;height:18px;flex-shrink:0;stroke:currentColor;fill:none;
+    stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s;}
+  .m-acc.open .m-acc-btn svg{transform:rotate(180deg);}
+  .m-acc-body{display:none;}
+  .m-acc.open .m-acc-body{display:block;}
+  .m-acc-body>section{padding-top:0;}
+  .m-acc-body .m-acc-hide{display:none;}
+}
