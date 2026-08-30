@@ -530,7 +530,7 @@ a.channel-card:hover{border-color:var(--violet-mid);}
 @media (max-width:960px){
 }
 @media (max-width:760px){
-  h1.hero-heading,.hero-copy h1.hero-heading{font-size:28px;line-height:1.32;}
+  h1.hero-heading,.hero-copy h1.hero-heading{font-size:clamp(20px,6.8vw,28px);line-height:1.32;}
   .hero-copy .hero-lead-left{font-size:14.5px;line-height:1.85;}
   .hero-ctas-left .pill-btn{justify-content:center;}
 }
@@ -684,4 +684,15 @@ nav .pill-btn:hover,nav summary.pill-btn:hover{border-color:var(--violet-mid);co
 @media (max-width:600px){
   .legal-sec h2{font-size:17px;gap:10px;}
   .legal-sec p,.legal-sec li{font-size:15px;}
+}
+
+
+/* --- the headline breaks in a different place once it stops fitting:
+       wide  -> The barrier to Japan was never / the language.
+       narrow-> The barrier to Japan was / never the language.
+   without this the narrow case wraps on its own and lands on three lines --- */
+.hero-br-sm{display:none;}
+@media (max-width:479px){
+  .hero-br-sm{display:inline;}
+  .hero-br-lg{display:none;}
 }
