@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
@@ -353,7 +353,7 @@
     label.style.color = '';
     meta.textContent = 'Open the full index for the reading.';
   }
-  fetch('/api/xwin-index')
+  fetch('https://xwin-bergamot.vercel.app/api/xwin-index')
     .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function(d){
       if (typeof d.score !== 'number') throw new Error('no score');
